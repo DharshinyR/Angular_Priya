@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<script src="angular.min.js"></script>
+<body>
+
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<form>
+<center>
+
+<body style="background-color:orange;">
+First Name: <input type="text" ng-model="firstName" required><br><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}<br>
+Gender:<br>
+<input type="radio" ng-model="myVar" value="male">Male
+<input type="radio" ng-model="myVar" value="female">Female
+<input type="radio" ng-model="myVar" value="other">other<br>
+Category:
+<select ng-model="pp">
+<option value="">
+<option value="Student"> Student
+<option value="Government Employee"Government Employee
+<option value="Private Employee">Private Employee
+</select>
+<br>
+<p>Email:<br>
+<input type="email" name="email" ng-model="email" required>
+</p>
+<br>
+<p>
+<input type="submit">
+</p>
+</div>
+</center>
+</form>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstName;
+    $scope.lastName;
+    $scope.fullname;
+    $scope.gender;
+    $scope.category;
+    $scope.email;
+});
+</script>
+
+</body>
+</html>
